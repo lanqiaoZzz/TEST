@@ -22,10 +22,10 @@ Time::Time(int *week, int *day, int startTime, int endTime) {
 }
 
 void Time::SetTime(int a, int b, int c, int d, int e, int mod) {
-	//Îå¸öÊı×Ö£¬·Ö±ğ±íÊ¾ a-bÖÜ[ÖÜc d-e½Ú]
+	//äº”ä¸ªæ•°å­—ï¼Œåˆ†åˆ«è¡¨ç¤º a-bå‘¨[å‘¨c d-eèŠ‚]
 
-	//mod=0±íÊ¾¿Î³ÌÊ±¼ä
-	//mod=1±íÊ¾¿¼ÊÔÊ±¼ä
+	//mod=0è¡¨ç¤ºè¯¾ç¨‹æ—¶é—´
+	//mod=1è¡¨ç¤ºè€ƒè¯•æ—¶é—´
 	for (int i = a; i <= b; i++) {
 		this->week[i] = 1;
 	}
@@ -125,4 +125,11 @@ int Time::compareTo(Time time) {
 				return 0;
 		}
 	}
+}
+
+int Time::is_on_this_day(int pweek, int pday)
+{
+	if (this->week[pweek] && this->day[pday])
+		return 1;
+	else return 0;
 }
