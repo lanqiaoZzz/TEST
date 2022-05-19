@@ -18,4 +18,10 @@ public:
 	int compareTo(Time time);
 	//冲突返回一，不冲突返回0；
 	int conflict_detection(Time time);
+	
+	/*
+	判断对象是否在[第pweek周][星期pday]
+	return: 若在，返回1；否则，返回0
+	*/
+	int is_on_this_day(int pweek, int pday);
 };
