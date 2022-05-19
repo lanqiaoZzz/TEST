@@ -52,55 +52,55 @@ public:
 		return this->exam_time;
 	}
 public:
-	//´æ´¢×÷Òµ
+	//å­˜å‚¨ä½œä¸š
 	void saveHomework();
-	//¼ÓÔØ×÷Òµ
+	//åŠ è½½ä½œä¸š
 	void uploadHomenwork();
-	//Çå¿Õ×÷Òµ
+	//æ¸…ç©ºä½œä¸š
 	void clear_disk();
-	//»ñÈ¡×÷Òµ
+	//è·å–ä½œä¸š
 	int getHomework();
-	//Ìí¼Ó×÷Òµ
+	//æ·»åŠ ä½œä¸š
 	void addHomework();
-	//É¾³ı×÷Òµ
+	//åˆ é™¤ä½œä¸š
 	void deleteHomework();
-	//ĞŞ¸Ä×÷Òµ
+	//ä¿®æ”¹ä½œä¸š
 	void modifyHomework();
-	//ÀÏÊ¦²é¿´×÷Òµ
+	//è€å¸ˆæŸ¥çœ‹ä½œä¸š
 	void checkHomework();
-	//Ñ§Éú²é¿´×÷Òµ
+	//å­¦ç”ŸæŸ¥çœ‹ä½œä¸š
 	void checkHomework(int id);
 public:
-	//´ÓÄÚ´ÓÖĞ¼ÓÔØµç×Ó×ÊÁÏ
+	//ä»å†…ä»ä¸­åŠ è½½ç”µå­èµ„æ–™
 
 public:
-	//½«¿Î³Ì±£´æµ½ÄÚ´æ
+	//å°†è¯¾ç¨‹ä¿å­˜åˆ°å†…å­˜
 	void save_course(ofstream& ofs);
 	static int ID;
 private:
-	char name[50];                   //¿Î³ÌÃû
-	char courseTime[50];			//ÉÏ¿ÎÊ±¼ä£¨¸ñÊ½£ºx~xÖÜ[ÖÜ¼¸µÚ¼¸½Ú]£©
-	char coursePlace[10];			 //ÉÏ¿ÎµØµã
-	char paperData[50];				//Ö½ÖÊ¿Î³Ì×ÊÁÏ
-	char courseQqGroup[15];			//¿Î³ÌqqÈº
-	Time course_time;				//ÉÏ¿ÎÊ±¼ä
+	char name[50];                   //è¯¾ç¨‹å
+	char courseTime[50];			//ä¸Šè¯¾æ—¶é—´ï¼ˆæ ¼å¼ï¼šx~xå‘¨[å‘¨å‡ ç¬¬å‡ èŠ‚]ï¼‰
+	char coursePlace[10];			 //ä¸Šè¯¾åœ°ç‚¹
+	char paperData[50];				//çº¸è´¨è¯¾ç¨‹èµ„æ–™
+	char courseQqGroup[15];			//è¯¾ç¨‹qqç¾¤
+	Time course_time;				//ä¸Šè¯¾æ—¶é—´
 	
 
-	//×÷Òµ
-	int homework_num;		//×÷ÒµÊıÁ¿
-	Homework myHomework[30];	//×÷ÒµÊı×é
-	char homework_filename[40];	//×÷ÒµÎÄ¼şÃû
+	//ä½œä¸š
+	int homework_num;		//ä½œä¸šæ•°é‡
+	Homework myHomework[30];	//ä½œä¸šæ•°ç»„
+	char homework_filename[40];	//ä½œä¸šæ–‡ä»¶å
 	
-	 //µç×Ó×ÊÁÏ
+	 //ç”µå­èµ„æ–™
 	Folder electronicData;
 
-	//µ±Ç°½ø¶È
+	//å½“å‰è¿›åº¦
 	char progress[20]= "            ";
 
-	//¿¼ÊÔ
-	char examTime[40] = "            ";		//¿¼ÊÔÊ±¼ä
-	char examPlace[10]=" ";					//¿¼ÊÔµØµã
-	Time exam_time;							//¿¼ÊÔÊ±¼ä
+	//è€ƒè¯•
+	char examTime[40] = "            ";		//è€ƒè¯•æ—¶é—´
+	char examPlace[10]=" ";					//è€ƒè¯•åœ°ç‚¹
+	Time exam_time;							//è€ƒè¯•æ—¶é—´
 
 	int course_ID;
 };

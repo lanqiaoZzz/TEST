@@ -8,8 +8,8 @@ class File {
 public:
 	
 	File(char* file_path, char* file_name) {
-		strcpy(this->name, file_name);               //ÎÄ¼şÃû
-		strcpy(this->path, file_path);				 //ÎÄ¼şÂ·¾¶
+		strcpy(this->name, file_name);               //æ–‡ä»¶å
+		strcpy(this->path, file_path);				 //æ–‡ä»¶è·¯å¾„
 		this->fileWeek = Timer::curWeek;
 		this->fileTime = Timer::curTime;
 		this->fileDay = Timer::curDay;
@@ -47,13 +47,13 @@ public:
 		this->size = size;
 	}
 
-	//ºÍÎÄ¼şbÖØ¸´·µ»Øtrue
+	//å’Œæ–‡ä»¶bé‡å¤è¿”å›true
 	bool checkDuplicate(File b);
 private:
-	char name[50];              //ÎÄ¼şÃû
-	char path[100];				//ÎÄ¼şÂ·¾¶
-	int	size=100;					//ÎÄ¼ş´óĞ¡(×Ö½Ú)
-	//ÉÏ´«Ê±¼ä
+	char name[50];              //æ–‡ä»¶å
+	char path[100];				//æ–‡ä»¶è·¯å¾„
+	int	size=100;					//æ–‡ä»¶å¤§å°(å­—èŠ‚)
+	//ä¸Šä¼ æ—¶é—´
 	int fileWeek;
 	int fileDay;
 	int fileTime;

@@ -6,7 +6,7 @@
 #include"Folder.h"
 #include"Timer.h"
 using namespace std;
-//ÒÑ½»×÷Òµ Óë ´ı½»×÷Òµ
+//å·²äº¤ä½œä¸š ä¸ å¾…äº¤ä½œä¸š
 class Homework {
 
 public:
@@ -45,7 +45,7 @@ public:
 		return &this->paidHomework;
 	}
 private:
-	char unpaidHomework[100];	//´ı½»×÷Òµ
-	int state[30];				//·Ö±ğ´æ´¢Ã¿¸öÑ§ÉúµÄ×÷Òµ×´Ì¬£¬0±íÊ¾Î´Ìá½»£¬1±íÊ¾Ìá½»
-	Folder paidHomework;		//ÒÑ½»×÷Òµ
+	char unpaidHomework[100];	//å¾…äº¤ä½œä¸š
+	int state[30];				//åˆ†åˆ«å­˜å‚¨æ¯ä¸ªå­¦ç”Ÿçš„ä½œä¸šçŠ¶æ€ï¼Œ0è¡¨ç¤ºæœªæäº¤ï¼Œ1è¡¨ç¤ºæäº¤
+	Folder paidHomework;		//å·²äº¤ä½œä¸š
 };

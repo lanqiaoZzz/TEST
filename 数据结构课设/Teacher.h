@@ -6,38 +6,38 @@
 using namespace std;
 class Teacher {
 public:
-	//²¼ÖÃ×÷Òµ
+	//å¸ƒç½®ä½œä¸š
 	void assignHomework();
-	//É¾³ı×÷Òµ
+	//åˆ é™¤ä½œä¸š
 	void delete_homework();
-	//ĞŞ¸Ä×÷Òµ
+	//ä¿®æ”¹ä½œä¸š
 	void modify_homework();
-	//²é¿´×÷Òµ
+	//æŸ¥çœ‹ä½œä¸š
 	void check_homework();
 public:
-	//·¢²¼¿¼ÊÔ
+	//å‘å¸ƒè€ƒè¯•
 	void Release_exam();
-	//ĞŞ¸Ä¿¼ÊÔĞÅÏ¢
+	//ä¿®æ”¹è€ƒè¯•ä¿¡æ¯
 	void modify_exam();
 public:
-	//¸ü¸Ä¿Î³Ì½ø¶È
+	//æ›´æ”¹è¯¾ç¨‹è¿›åº¦
 	void modify_progress();
 public:
 	
 	Teacher();
 	Teacher(TimeTable *table);
-	//·¢²¼Ò»ÃÅĞÂ¿Î³Ì
+	//å‘å¸ƒä¸€é—¨æ–°è¯¾ç¨‹
 	void releaseNewCourse();
-	//ĞŞ¸Ä¿Î³ÌĞÅÏ¢
+	//ä¿®æ”¹è¯¾ç¨‹ä¿¡æ¯
 	void modifyCourse();
-	//²é¿´×Ô¼ºÉÏµÄ¿Î³Ì
+	//æŸ¥çœ‹è‡ªå·±ä¸Šçš„è¯¾ç¨‹
 	void checkCourse();
-	//É¾³ı¿Î³Ì
+	//åˆ é™¤è¯¾ç¨‹
 	void deleteCourse();
 	
 private:
 	TimeTable* table;
-	int id; //Ö°¹¤ºÅ
-	char name[20]; //ĞÕÃû
-	char course_filename[40];//¿Î³ÌÎÄ¼şÃû
+	int id; //èŒå·¥å·
+	char name[20]; //å§“å
+	char course_filename[40];//è¯¾ç¨‹æ–‡ä»¶å
 };

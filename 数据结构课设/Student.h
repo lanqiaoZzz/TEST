@@ -2,80 +2,80 @@
 #include "TimeTable.h"
 #include"Time.h"
 #include"Timer.h"
-//#include"Activity.h"
+#include"Activity.h"
 #include<iostream>
 using namespace std;
 class Student {
 public:
-	//»ñÈ¡µç×Ó×ÊÁÏÎÄ¼ş¼Ğ
+	//è·å–ç”µå­èµ„æ–™æ–‡ä»¶å¤¹
 	Folder* get_electronicDataFoder();
 
-	//Ìí¼Óµç×Ó×ÊÁÏ
+	//æ·»åŠ ç”µå­èµ„æ–™
 	void add_electronicData();
 
-	//É¾³ıµç×Ó×ÊÁÏ
+	//åˆ é™¤ç”µå­èµ„æ–™
 	void delete_electronicData();
 
-	//ĞŞ¸Äµç×Ó×ÊÁÏ
+	//ä¿®æ”¹ç”µå­èµ„æ–™
 	void modify_electronicData();
 
-	//²é¿´¿Î³Ì×ÊÁÏ
+	//æŸ¥çœ‹è¯¾ç¨‹èµ„æ–™
 	void check_electronicData();
 public:
-	//²é¿´ËùÓĞ´ı½»×÷Òµ
+	//æŸ¥çœ‹æ‰€æœ‰å¾…äº¤ä½œä¸š
 	void checkHomework();
 
-	//Ìá½»×÷ÒµÊ±mod=1£¬ÆäËûÊ±ºòmod=0
+	//æäº¤ä½œä¸šæ—¶mod=1ï¼Œå…¶ä»–æ—¶å€™mod=0
 	Folder* getHomeworkFoder(int mod);
 
-	//Ìá½»×÷Òµ
+	//æäº¤ä½œä¸š
 	void submit_homework();
 
-	//²é¿´ÒÑ½»×÷Òµ
+	//æŸ¥çœ‹å·²äº¤ä½œä¸š
 	 void check_paidhomework();
 
-	//ĞŞ¸Ä×÷Òµ
+	//ä¿®æ”¹ä½œä¸š
 	 void modify_paidhomework();
 public:
 	Student();
 
 	Student(TimeTable* timetable);
 public:
-	//²é¿´ËùÓĞ¿Î³Ì;
+	//æŸ¥çœ‹æ‰€æœ‰è¯¾ç¨‹;
 	void checkCourse();
 
-	//Í¨¹ı¿Î³ÌÃû³Æ²éÑ¯¿Î³ÌĞÅÏ¢
+	//é€šè¿‡è¯¾ç¨‹åç§°æŸ¥è¯¢è¯¾ç¨‹ä¿¡æ¯
 	void queryCourseByName();
 
 public:
-	//Ñ¹ËõÄ³¸öµç×Ó¿Î³Ì×ÊÁÏ/Íê³ÉµÄ×÷Òµ
+	//å‹ç¼©æŸä¸ªç”µå­è¯¾ç¨‹èµ„æ–™/å®Œæˆçš„ä½œä¸š
 	void compressFile();
 
-	//mod==0:»ñÈ¡×÷ÒµÎÄ¼ş¼Ğ mod==1 »ñÈ¡µç×Ó×ÊÁÏÎÄ¼ş¼Ğ
+	//mod==0:è·å–ä½œä¸šæ–‡ä»¶å¤¹ mod==1 è·å–ç”µå­èµ„æ–™æ–‡ä»¶å¤¹
 	void checkDuplicate(int mod);
 public:
-	//´´½¨»î¶¯,°´ÕÕ»î¶¯Ê±¼äÉıĞò½øĞĞ²åÈë
+	//åˆ›å»ºæ´»åŠ¨,æŒ‰ç…§æ´»åŠ¨æ—¶é—´å‡åºè¿›è¡Œæ’å…¥
 	void create_activitiy();
 
-	//´òÓ¡»î¶¯ĞÅÏ¢£¬°´ÕÕ»î¶¯Ê±¼äÉıĞò
-	//void print_activity_info();
+	//æ‰“å°æ´»åŠ¨ä¿¡æ¯ï¼ŒæŒ‰ç…§æ´»åŠ¨æ—¶é—´å‡åº
+	void print_activity_info();
 
-	////°´Ê±¼ä²éÑ¯»î¶¯,Ä¬ÈÏ²éÑ¯±¾ÖÜµÄ»î¶¯£¨¶ş·Ö²éÕÒ£©
-	//void query_activity_bytime();
+	//æŒ‰æ—¶é—´æŸ¥è¯¢æ´»åŠ¨,é»˜è®¤æŸ¥è¯¢æœ¬å‘¨çš„æ´»åŠ¨ï¼ˆäºŒåˆ†æŸ¥æ‰¾ï¼‰
+	void query_activity_bytime();
 
-	////É¾³ı»î¶¯
-	//void delete_acticity();
+	//åˆ é™¤æ´»åŠ¨
+	void delete_acticity();
 
-	////Ê±¼ä³åÍ»¼ì²â,ÔÚ´´½¨»î¶¯Ê±±»µ÷ÓÃ
-	//void time_conflict_detection(Time time);
+	//æ—¶é—´å†²çªæ£€æµ‹,åœ¨åˆ›å»ºæ´»åŠ¨æ—¶è¢«è°ƒç”¨
+	void time_conflict_detection(Time time);
 public:
 	static int ID;
 private:
 	int id;
-	char name[20]; //ĞÕÃû  xkx:½«´óĞ¡À©Õ¹µ½20
-	TimeTable* table; //¿Î³Ì±í,xkx:½«¿Î³Ì±í¸ÄÎªÖ¸ÕëÀàĞÍ
+	char name[20]; //å§“å  xkx:å°†å¤§å°æ‰©å±•åˆ°20
+	TimeTable* table; //è¯¾ç¨‹è¡¨,xkx:å°†è¯¾ç¨‹è¡¨æ”¹ä¸ºæŒ‡é’ˆç±»å‹
 public:
-	//static Activity* my_activity; //»î¶¯Êı×é 
-	//static int activity_capacity;  //»î¶¯×î´óÈİÁ¿
-	//static int activity_num;//»î¶¯ÊıÁ¿
+	static Activity* my_activity; //æ´»åŠ¨æ•°ç»„ 
+	static int activity_capacity;  //æ´»åŠ¨æœ€å¤§å®¹é‡
+	static int activity_num;//æ´»åŠ¨æ•°é‡
 };

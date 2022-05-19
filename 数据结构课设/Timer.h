@@ -8,18 +8,18 @@ class Timer {
 
 public:
 
-	//Ä£ÄâÏµÍ³Ê±¼ä + ÄÖÖÓÌáĞÑ + »î¶¯¹ıÆÚºó¸üĞÂÅÅĞò½á¹û
+	//æ¨¡æ‹Ÿç³»ç»Ÿæ—¶é—´ + é—¹é’Ÿæé†’ + æ´»åŠ¨è¿‡æœŸåæ›´æ–°æ’åºç»“æœ
 	//static void task();
 
-	//¿ªÊ¼¼ÆÊ±
+	//å¼€å§‹è®¡æ—¶
 	//static void start();
 
-	//Í£Ö¹¼ÆÊ±
+	//åœæ­¢è®¡æ—¶
 	//static void stop();
 
 public:
 
 	static int curWeek, curDay, curTime;
-	static int isWorking;   //1£º¿ªÊ¼¼ÆÊ± 0£ºÍ£Ö¹¼ÆÊ±
+	static int isWorking;   //1ï¼šå¼€å§‹è®¡æ—¶ 0ï¼šåœæ­¢è®¡æ—¶
 	static int interval;
 };

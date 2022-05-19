@@ -2,7 +2,7 @@
 #include"Timer.h"
 class Time
 {
-private:
+public:
 	int week[20];
 	int day[8];
 	int startTime;
@@ -10,12 +10,12 @@ private:
 public:
 	Time(int *week, int *day, int startTime, int endTime);
 	 Time();
-	 //½«²ÎÊı×ª»¯Îª½á¹¹Êı¾İ
+	 //å°†å‚æ•°è½¬åŒ–ä¸ºç»“æ„æ•°æ®
 	 void SetTime(int a, int b, int c, int d,int e,int mod);
-	//ÅĞ¶Ïµ±Ç°Ê±¼äÓëtimeË­ÏÈ·¢Éú£¬Èç¹ûµ±Ç°Ê±¼äÏÈ·¢Éú£¬·µ»Ø1£¬timeÊ±¼äÏÈ·¢ÉúÔò·µ»Ø0
+	//åˆ¤æ–­å½“å‰æ—¶é—´ä¸timeè°å…ˆå‘ç”Ÿï¼Œå¦‚æœå½“å‰æ—¶é—´å…ˆå‘ç”Ÿï¼Œè¿”å›1ï¼Œtimeæ—¶é—´å…ˆå‘ç”Ÿåˆ™è¿”å›0
 	int is_clear(Time time);
-	//Ê±¼ä±È½Ïº¯Êı
+	//æ—¶é—´æ¯”è¾ƒå‡½æ•°
 	int compareTo(Time time);
-	//³åÍ»·µ»ØÒ»£¬²»³åÍ»·µ»Ø0£»
+	//å†²çªè¿”å›ä¸€ï¼Œä¸å†²çªè¿”å›0ï¼›
 	int conflict_detection(Time time);
 };

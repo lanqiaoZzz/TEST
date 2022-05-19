@@ -13,28 +13,28 @@ public:
 
 	TimeTable();
 public:
-	//Ìí¼Ó¿Î³Ì
+	//æ·»åŠ è¯¾ç¨‹
 	void addCourse();
-	//É¾³ı¿Î³Ì
+	//åˆ é™¤è¯¾ç¨‹
 	void deleteCourse();
-	//ĞŞ¸Ä¿Î³Ì
+	//ä¿®æ”¹è¯¾ç¨‹
 	void modifyCourse();
-	//²é¿´¿Î³ÌĞÅÏ¢
+	//æŸ¥çœ‹è¯¾ç¨‹ä¿¡æ¯
 	void checkCourseInfo();
-	//ÁĞ¾Ù¿Î³Ì
+	//åˆ—ä¸¾è¯¾ç¨‹
 	void showCourses();
-	//»ñÈ¡¿Î³Ì
+	//è·å–è¯¾ç¨‹
 	int getCousrse();
 public:
-	//¼ÓÔØ¿Î³Ì
+	//åŠ è½½è¯¾ç¨‹
 	void uploadCourse();
-	//°´ÕÕ¿Î³ÌÃû½øĞĞ²éÕÒ
+	//æŒ‰ç…§è¯¾ç¨‹åè¿›è¡ŒæŸ¥æ‰¾
 	void queryCourseByName();
-	//ÅÅĞò£º¸ù¾İÉÏ¿ÎÊ±¼ä
+	//æ’åºï¼šæ ¹æ®ä¸Šè¯¾æ—¶é—´
 	void sortByCourseTime();
-	//ÅÅĞò£º¸ù¾İ¿¼ÊÔÊ±¼ä£¨´ÓÔçµ½Íí£©
+	//æ’åºï¼šæ ¹æ®è€ƒè¯•æ—¶é—´ï¼ˆä»æ—©åˆ°æ™šï¼‰
 	void sortByExamTime();	
 private:
-	Course myCourse[30];                //ÓÉ¿Î³ÌÊı×é
-	int CourseNum;                      //¿Î³ÌÊıÄ¿
+	Course myCourse[30];                //ç”±è¯¾ç¨‹æ•°ç»„
+	int CourseNum;                      //è¯¾ç¨‹æ•°ç›®
 };

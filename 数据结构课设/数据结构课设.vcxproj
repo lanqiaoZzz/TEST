@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Activity.cpp" />
     <ClCompile Include="Course.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Folder.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="数据结构课设.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Activity.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="Course.h" />
     <ClInclude Include="File.h" />
