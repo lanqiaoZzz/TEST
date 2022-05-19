@@ -8,6 +8,8 @@ Student::Student(TimeTable* timetable) {
 	this->table = timetable;
 	this->id = this->ID;
 	this->ID++;
+	
+	Timer::start(timetable);
 }
 
 void Student::queryCourseByName() {
@@ -20,11 +22,11 @@ void Student::checkCourse() {
 	int mod;
 
 	cout << "**************************************************" << endl;
-	cout << "*************  0.ÍË³ö  ***************************" << endl;
-	cout << "*************  1.°´¿¼ÊÔÊ±¼ä½øĞĞÅÅĞò  *************" << endl;
-	cout << "*************  2.°´ÉÏ¿ÎÊ±¼ä½øĞĞÅÅĞò  *************" << endl;
+	cout << "*************  0.é€€å‡º  ***************************" << endl;
+	cout << "*************  1.æŒ‰è€ƒè¯•æ—¶é—´è¿›è¡Œæ’åº  *************" << endl;
+	cout << "*************  2.æŒ‰ä¸Šè¯¾æ—¶é—´è¿›è¡Œæ’åº  *************" << endl;
 	cout << "**************************************************" << endl;
-	cout << "ÇëÊäÈëÄúµÄÑ¡Ôñ" << endl;
+	cout << "è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©" << endl;
 
 	cin >> mod;
 	if (mod == 2)
@@ -44,17 +46,17 @@ void Student::checkHomework() {
 	int n = this->table->getCoursenum();
 	for (int i = 0; i < n; i++)
 	{
-		cout << "¿Î³Ì" << i + 1<<": ";
+		cout << "è¯¾ç¨‹" << i + 1<<": ";
 		courses[i].checkHomework(this->id);
 	}
 	cout << "********************************************" << endl;
-	cout << "*************  0.ÍË³ö  *********************" << endl;
-	cout << "*************  1.Ìá½»×÷Òµ  *****************" << endl;
-	cout << "*************  2.²é¿´ÒÑ½»×÷Òµ  *************" << endl;
-	cout << "*************  3.ĞŞ¸ÄÒÑ½»×÷Òµ  *************" << endl;
-	cout << "*************  4.ÒÑ½»×÷Òµ²éÖØ  *************" << endl;
+	cout << "*************  0.é€€å‡º  *********************" << endl;
+	cout << "*************  1.æäº¤ä½œä¸š  *****************" << endl;
+	cout << "*************  2.æŸ¥çœ‹å·²äº¤ä½œä¸š  *************" << endl;
+	cout << "*************  3.ä¿®æ”¹å·²äº¤ä½œä¸š  *************" << endl;
+	cout << "*************  4.å·²äº¤ä½œä¸šæŸ¥é‡  *************" << endl;
 	cout << "********************************************" << endl;
-	cout<< "ÇëÊäÈëÄúµÄÑ¡Ôñ" << endl;
+	cout<< "è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©" << endl;
 	int choose = 0;
 	cin >> choose;
 	switch (choose)
@@ -77,10 +79,10 @@ void Student::checkHomework() {
 }
 
 Folder* Student::getHomeworkFoder(int mod) {
-	cout << "ÇëÊäÈë¿Î³ÌºÅ" << endl;
+	cout << "è¯·è¾“å…¥è¯¾ç¨‹å·" << endl;
 	int Cindex;
 	cin >> Cindex;
-	cout << "ÇëÊäÈë×÷ÒµºÅ" << endl;
+	cout << "è¯·è¾“å…¥ä½œä¸šå·" << endl;
 	int Hindex;
 	cin >> Hindex;
 
@@ -121,7 +123,7 @@ Folder* Student::get_electronicDataFoder() {
 void Student::add_electronicData() {
 	Folder* folder = this->get_electronicDataFoder();
 	int length;
-	cout << "ÇëÊäÈëÄúÒªÉÏ´«µÄÎÄ¼şµÄÊıÁ¿£º" << endl;
+	cout << "è¯·è¾“å…¥æ‚¨è¦ä¸Šä¼ çš„æ–‡ä»¶çš„æ•°é‡ï¼š" << endl;
 	cin >> length;
 	for (int i = 0; i < length; i++)
 	{
@@ -162,7 +164,7 @@ void Student::checkDuplicate(int mod) {
 }
 
 void Student::create_activitiy() {
-	cout << "ÇëÊäÈëÄãµÄ»î¶¯¸öÊı:";
+	cout << "è¯·è¾“å…¥ä½ çš„æ´»åŠ¨ä¸ªæ•°:";
 	cin >> this->activity_num;
 	for (int i = 0; i < this->activity_num; i++)
 	{
@@ -174,36 +176,36 @@ void Student::create_activitiy() {
 				newmyactivity[j] = this->my_activity[j];
 			}
 		}
-		//Â¼Èë»î¶¯ĞÅÏ¢
+		//å½•å…¥æ´»åŠ¨ä¿¡æ¯
 		int type = 0, setClock = 0, x = 0, y = 0, a = 0, b = 0;
 		char name[10], timeword[15], place[10];
 
 		Time time;
-		cout << "ÇëÊäÈë»î¶¯Ãû£º" << endl;
+		cout << "è¯·è¾“å…¥æ´»åŠ¨åï¼š" << endl;
 		cin >> name;
-		cout << "ÇëÊäÈë»î¶¯ÀàĞÍ£¨0±íÊ¾¸öÈË»î¶¯£¬1±íÊ¾¼¯Ìå»î¶¯£©£º" << endl;
+		cout << "è¯·è¾“å…¥æ´»åŠ¨ç±»å‹ï¼ˆ0è¡¨ç¤ºä¸ªäººæ´»åŠ¨ï¼Œ1è¡¨ç¤ºé›†ä½“æ´»åŠ¨ï¼‰ï¼š" << endl;
 		cin >> type;
-		cout << "ÇëÊäÈë»î¶¯Ê±¼ä£¨×ÔÈ»ÓïÑÔ£©£º" << endl;
+		cout << "è¯·è¾“å…¥æ´»åŠ¨æ—¶é—´ï¼ˆè‡ªç„¶è¯­è¨€ï¼‰ï¼š" << endl;
 		cin >> timeword;
-		cout << "ÇëÊäÈë»î¶¯Ê±¼ä£º£¨¸ñÊ½£ºx y a b m n£¬±íÊ¾µÚxÖÜ-µÚyÖÜÖÜaµ½ÖÜbmµã-nµã£©";
+		cout << "è¯·è¾“å…¥æ´»åŠ¨æ—¶é—´ï¼šï¼ˆæ ¼å¼ï¼šx y a b m nï¼Œè¡¨ç¤ºç¬¬xå‘¨-ç¬¬yå‘¨å‘¨aåˆ°å‘¨bmç‚¹-nç‚¹ï¼‰";
 		cin >> x >> y >> a >> b >> time.startTime >> time.endTime;
 		for (int m = x; m <= y; m++) time.week[m] = 1;
 		for (int m = a; m <= b; m++) time.day[m] = 1;
-		cout << "ÇëÊäÈë»î¶¯µØµã£º" << endl;
+		cout << "è¯·è¾“å…¥æ´»åŠ¨åœ°ç‚¹ï¼š" << endl;
 		cin >> place;
-		cout << "ÇëÊäÈëÊÇ·ñÉè¶¨ÄÖÖÓ£¨0²»Éè¶¨£¬1Éè¶¨£©£º" << endl;
+		cout << "è¯·è¾“å…¥æ˜¯å¦è®¾å®šé—¹é’Ÿï¼ˆ0ä¸è®¾å®šï¼Œ1è®¾å®šï¼‰ï¼š" << endl;
 		cin >> setClock;
-		//´´½¨ĞÂ»î¶¯
+		//åˆ›å»ºæ–°æ´»åŠ¨
 		Activity* newactivity = new Activity(type, name, timeword, time, place, setClock);
 		newmyactivity[i] = newactivity;
 		delete[] this->my_activity;
 		this->my_activity = newmyactivity;
-		cout << "ÄúÒÑ³É¹¦Ìí¼ÓÒ»Ïî»î¶¯" << endl;
+		cout << "æ‚¨å·²æˆåŠŸæ·»åŠ ä¸€é¡¹æ´»åŠ¨" << endl;
 		if (i != 0)
 		{
 			for (int j = 0; j < i; j++)
 			{
-				if (time.conflict_detection(this->my_activity[i]->getTime1(), this->my_activity[j]->getTime1())) cout << "ÓëÏÖÓĞ»î¶¯Ê±¼ä³åÍ»£¡" << endl;
+				if (time.conflict_detection(this->my_activity[i]->getTime1(), this->my_activity[j]->getTime1())) cout << "ä¸ç°æœ‰æ´»åŠ¨æ—¶é—´å†²çªï¼" << endl;
 				if (time.is_clear(this->my_activity[i]->getTime1(), this->my_activity[j]->getTime1()))
 				{
 					my_activity[i] = my_activity[j];
@@ -217,8 +219,8 @@ void Student::create_activitiy() {
 void Student::print_activity_info() {
 	for (int i = 0; i < activity_num; i++) {
 		cout << my_activity[i]->getName();
-		if (my_activity[i]->getType() == 0) cout << " [¸öÈË»î¶¯] ";
-		else cout << " [¼¯Ìå»î¶¯] ";
+		if (my_activity[i]->getType() == 0) cout << " [ä¸ªäººæ´»åŠ¨] ";
+		else cout << " [é›†ä½“æ´»åŠ¨] ";
 		cout << my_activity[i]->getTimeword() << " " << my_activity[i]->getPlace() << endl;
 	}
 }
@@ -255,8 +257,8 @@ void Student::query_activity_bytime(Activity** my_activity, int low, int high, i
 		temp = my_activity[i]->getName();
 		printf("%s", temp);
 		//cout << my_activity[i]->getName();
-		if (my_activity[i]->getType() == 0) cout << " [¸öÈË»î¶¯] ";
-		else cout << " [¼¯Ìå»î¶¯] ";
+		if (my_activity[i]->getType() == 0) cout << " [ä¸ªäººæ´»åŠ¨] ";
+		else cout << " [é›†ä½“æ´»åŠ¨] ";
 
 
 		temp = my_activity[i]->getTimeword();
@@ -274,21 +276,21 @@ void Student::delete_activity(Activity* p) {
 	for (int i = 0; this->my_activity[i] != p; i++)
 		if (i >= 0 && i < this->activity_num)
 		{
-			//ÓÃÖ¸ÕëpÖ¸Ïò¸Ã»î¶¯ËùÔÚ¿Õ¼ä
+			//ç”¨æŒ‡é’ˆpæŒ‡å‘è¯¥æ´»åŠ¨æ‰€åœ¨ç©ºé—´
 			Activity* p = this->my_activity[i];
-			//É¾³ı£ºÊı×éÏòÇ°¸²¸Ç
+			//åˆ é™¤ï¼šæ•°ç»„å‘å‰è¦†ç›–
 			for (int j = i; j < this->activity_num - 1; j++)
 			{
 				this->my_activity[j] = this->my_activity[j + 1];
 			}
-			//¸üĞÂ»î¶¯ÊıÁ¿
+			//æ›´æ–°æ´»åŠ¨æ•°é‡
 			this->activity_num--;
-			//ÊÍ·Å¿Õ¼ä
+			//é‡Šæ”¾ç©ºé—´
 			delete p;
-			cout << "É¾³ı³É¹¦" << endl;
+			cout << "åˆ é™¤æˆåŠŸ" << endl;
 		}
 		else
 		{
-			cout << "É¾³ıÊ§°Ü ²éÎŞ´Ë»î¶¯£¡" << endl;
+			cout << "åˆ é™¤å¤±è´¥ æŸ¥æ— æ­¤æ´»åŠ¨ï¼" << endl;
 		}
 }
