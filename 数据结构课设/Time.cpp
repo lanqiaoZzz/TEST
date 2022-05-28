@@ -127,6 +127,11 @@ int Time::compareTo(Time time) {
 	}
 }
 
+int Time::get_startTime()
+{
+	return this->startTime;
+}
+
 int Time::is_on_this_day(int pweek, int pday)
 {
 	if (this->week[pweek] && this->day[pday])
