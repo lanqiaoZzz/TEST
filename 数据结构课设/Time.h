@@ -17,8 +17,8 @@ public:
 	//时间比较函数
 	int compareTo(Time time);
 	//冲突返回一，不冲突返回0；
-	int conflict_detection(Time time);
-	
+	int conflict_detection(Time time);	
+	int get_startTime();
 	/*
 	判断对象是否在[第pweek周][星期pday]
 	return: 若在，返回1；否则，返回0
