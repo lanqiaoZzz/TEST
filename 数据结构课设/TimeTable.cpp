@@ -3,7 +3,7 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
-//¹¹Ôìº¯Êı£º³õÊ¼»¯¿Î³Ì±í
+//æ„é€ å‡½æ•°ï¼šåˆå§‹åŒ–è¯¾ç¨‹è¡¨
 TimeTable::TimeTable(){
 	this->CourseNum = 0;
 	this->uploadCourse();
@@ -11,27 +11,27 @@ TimeTable::TimeTable(){
 
 void TimeTable::addCourse() {
 	{
-		char name[20];                        //¿Î³ÌÃû
-		char courseTime[40];        //ÉÏ¿ÎÊ±¼ä£¨¸ñÊ½£ºx~xÖÜ[ÖÜ¼¸µÚ¼¸½Ú]£©
-		char coursePlace[10];        //ÉÏ¿ÎµØµã
-		char paperData[20];                //Ö½ÖÊ¿Î³Ì×ÊÁÏ
-		char courseQqGroup[15]; //¿Î³ÌqqÈº   
-		cout << "ÇëÊäÈë¿Î³ÌÃû£º" << endl;
+		char name[20];                        //è¯¾ç¨‹å
+		char courseTime[40];        //ä¸Šè¯¾æ—¶é—´ï¼ˆæ ¼å¼ï¼šx~xå‘¨[å‘¨å‡ ç¬¬å‡ èŠ‚]ï¼‰
+		char coursePlace[10];        //ä¸Šè¯¾åœ°ç‚¹
+		char paperData[20];                //çº¸è´¨è¯¾ç¨‹èµ„æ–™
+		char courseQqGroup[15]; //è¯¾ç¨‹qqç¾¤   
+		cout << "è¯·è¾“å…¥è¯¾ç¨‹åï¼š" << endl;
 		cin >> name;
-		cout << "ÇëÊäÈëÉÏ¿ÎÊ±¼ä£¨ĞÎÈç:1-16ÖÜ[ÖÜÒ»1-2½Ú]" << endl;
+		cout << "è¯·è¾“å…¥ä¸Šè¯¾æ—¶é—´ï¼ˆå½¢å¦‚:1-16å‘¨[å‘¨ä¸€1-2èŠ‚]" << endl;
 		cin >> courseTime;
 
-		cout<<"ÇëÊäÈëÎå¸öÊı×Ö£¬·Ö±ğ±íÊ¾ a-bÖÜ[ÖÜCd-e½Ú]" << endl;
+		cout<<"è¯·è¾“å…¥äº”ä¸ªæ•°å­—ï¼Œåˆ†åˆ«è¡¨ç¤º a-bå‘¨[å‘¨Cd-eèŠ‚]" << endl;
 		int a, b, c, d, e;
 		cin >> a >> b >> c >> d >> e;
 		Time time;
 		time.SetTime(a, b, c, d, e, 0);
 
-		cout << "ÇëÊäÈëÉÏ¿ÎµØµã£º" << endl;
+		cout << "è¯·è¾“å…¥ä¸Šè¯¾åœ°ç‚¹ï¼š" << endl;
 		cin >> coursePlace;
-		cout << "ÇëÊäÈëÖ½ÖÊ¿Î³Ì×ÊÁÏ£º" << endl;
+		cout << "è¯·è¾“å…¥çº¸è´¨è¯¾ç¨‹èµ„æ–™ï¼š" << endl;
 		cin >> paperData;
-		cout << "ÇëÊäÈë¿Î³ÌqqÈº £º" << endl;
+		cout << "è¯·è¾“å…¥è¯¾ç¨‹qqç¾¤ ï¼š" << endl;
 		cin >> courseQqGroup;
 
 		Course newcourse(name, courseTime, coursePlace, paperData, courseQqGroup,time);
@@ -39,7 +39,7 @@ void TimeTable::addCourse() {
 
 		this->CourseNum++;
 		
-		cout << "Ìí¼Ó³É¹¦£¡" << endl;
+		cout << "æ·»åŠ æˆåŠŸï¼" << endl;
 		system("pause");
 		
 	}
@@ -49,7 +49,7 @@ void TimeTable::deleteCourse() {
 	int index = this->getCousrse();
 
 	if (index == -1) {
-		cout << "É¾³ıÊ§°Ü!" << endl;
+		cout << "åˆ é™¤å¤±è´¥!" << endl;
 		return;
 	}
 	
@@ -59,48 +59,48 @@ void TimeTable::deleteCourse() {
 	}
 
 	this->CourseNum--;
-	cout << "É¾³ı³É¹¦" << endl;
+	cout << "åˆ é™¤æˆåŠŸ" << endl;
 	system("pause");
 }
 
 void TimeTable::modifyCourse() {
 	int index = this->getCousrse();
-	char name[50];                        //¿Î³ÌÃû
-	char courseTime[50];        //ÉÏ¿ÎÊ±¼ä£¨¸ñÊ½£ºx~xÖÜ[ÖÜ¼¸µÚ¼¸½Ú]£©
-	char coursePlace[10];        //ÉÏ¿ÎµØµã
-	char paperData[50];                //Ö½ÖÊ¿Î³Ì×ÊÁÏ
-	char courseQqGroup[15]; //¿Î³ÌqqÈº   
-	cout << "ÇëÊäÈëĞÂµÄ¿Î³ÌÃû£º" << endl;
+	char name[50];                        //è¯¾ç¨‹å
+	char courseTime[50];        //ä¸Šè¯¾æ—¶é—´ï¼ˆæ ¼å¼ï¼šx~xå‘¨[å‘¨å‡ ç¬¬å‡ èŠ‚]ï¼‰
+	char coursePlace[10];        //ä¸Šè¯¾åœ°ç‚¹
+	char paperData[50];                //çº¸è´¨è¯¾ç¨‹èµ„æ–™
+	char courseQqGroup[15]; //è¯¾ç¨‹qqç¾¤   
+	cout << "è¯·è¾“å…¥æ–°çš„è¯¾ç¨‹åï¼š" << endl;
 	cin >> name;
-	cout << "ÇëÊäÈëĞÂµÄÉÏ¿ÎÊ±¼ä£¨ĞÎÈç 1-16ÖÜ[ÖÜÒ»1-2½Ú]" << endl;
+	cout << "è¯·è¾“å…¥æ–°çš„ä¸Šè¯¾æ—¶é—´ï¼ˆå½¢å¦‚ 1-16å‘¨[å‘¨ä¸€1-2èŠ‚]" << endl;
 	cin >> courseTime;
 
-	cout << "ÇëÊäÈëÎå¸öÊı×Ö£¬·Ö±ğ±íÊ¾ a-bÖÜ[ÖÜCd-e½Ú]" << endl;
+	cout << "è¯·è¾“å…¥äº”ä¸ªæ•°å­—ï¼Œåˆ†åˆ«è¡¨ç¤º a-bå‘¨[å‘¨Cd-eèŠ‚]" << endl;
 	int a, b, c, d, e;
 	cin >> a >> b >> c >> d >> e;
 	Time time;
 	time.SetTime(a, b, c, d, e, 0);
 
-	cout << "ÇëÊäÈëĞÂµÄÉÏ¿ÎµØµã£º" << endl;
+	cout << "è¯·è¾“å…¥æ–°çš„ä¸Šè¯¾åœ°ç‚¹ï¼š" << endl;
 	cin >> coursePlace;
-	cout << "ÇëÊäÈëĞÂµÄÖ½ÖÊ¿Î³Ì×ÊÁÏ£º" << endl;
+	cout << "è¯·è¾“å…¥æ–°çš„çº¸è´¨è¯¾ç¨‹èµ„æ–™ï¼š" << endl;
 	cin >> paperData;
-	cout << "ÇëÊäÈëĞÂµÄ¿Î³ÌqqÈº £º" << endl;
+	cout << "è¯·è¾“å…¥æ–°çš„è¯¾ç¨‹qqç¾¤ ï¼š" << endl;
 	cin >> courseQqGroup;
 
 	Course newcourse(name, courseTime, coursePlace, paperData, courseQqGroup, time);
 	this->myCourse[index] = newcourse;
 	
-	cout << "ĞŞ¸Ä³É¹¦£¡" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸï¼" << endl;
 	system("pause");
 }
 
 void TimeTable::checkCourseInfo() {
 	if (this->CourseNum == 0) {
-		cout << "µ±Ç°»¹Ã»ÓĞÈÎºÎ¿Î³Ì£¡" << endl;
+		cout << "å½“å‰è¿˜æ²¡æœ‰ä»»ä½•è¯¾ç¨‹ï¼" << endl;
 		return;
 	}
-	cout << "¿Î³ÌÃû³Æ\tÉÏ¿ÎÊ±¼ä\t\tÉÏ¿ÎµØµã\tÖ½ÖÊ×ÊÁÏ\t\tµ±Ç°½ø¶È\t¿Î³ÌÈº\t\t¿¼ÊÔµØµã \t¿¼ÊÔÊ±¼ä" << endl;
+	cout << "è¯¾ç¨‹åç§°\tä¸Šè¯¾æ—¶é—´\t\tä¸Šè¯¾åœ°ç‚¹\tçº¸è´¨èµ„æ–™\t\tå½“å‰è¿›åº¦\tè¯¾ç¨‹ç¾¤\t\tè€ƒè¯•åœ°ç‚¹ \tè€ƒè¯•æ—¶é—´" << endl;
 	char courseInfo[150];
 	for (int i = 0; i < this->CourseNum; i++) {
 		courseInfo[0] = 0;
@@ -111,7 +111,7 @@ void TimeTable::checkCourseInfo() {
 
 void TimeTable::showCourses() {
 	for (int i = 0; i < this->CourseNum; i++) {
-		cout << "¿Î³Ì" << i + 1 <<":\t"
+		cout << "è¯¾ç¨‹" << i + 1 <<":\t"
 			<< this->myCourse[i].getname()
 			<< endl;
 	}
@@ -120,19 +120,19 @@ void TimeTable::showCourses() {
 
 int TimeTable::getCousrse(){
 	if (this->CourseNum == 0) {
-		cout << "µ±Ç°»¹Ã»ÓĞÈÎºÎ¿Î³Ì£¡" << endl;
+		cout << "å½“å‰è¿˜æ²¡æœ‰ä»»ä½•è¯¾ç¨‹ï¼" << endl;
 		return -1;
 	}
 	this->showCourses();
 
-	cout << "ÇëÊäÈë¿Î³Ì±àºÅ" << endl;
+	cout << "è¯·è¾“å…¥è¯¾ç¨‹ç¼–å·" << endl;
 
 	int index;
 	cin >> index;
 
 	while (index<1||index>this->CourseNum)
 	{
-		cout << "ÎŞĞ§ÊäÈë£¬ÇëÖØĞÂÊäÈë" << endl;
+		cout << "æ— æ•ˆè¾“å…¥ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 		cin >> index;
 	}
 	
@@ -141,7 +141,7 @@ int TimeTable::getCousrse(){
 
 void TimeTable::uploadCourse() {
 	ifstream ifs;
-	ifs.open("¿Î³Ì.txt", ios::in);
+	ifs.open("è¯¾ç¨‹.txt", ios::in);
 	ifs >> this->CourseNum;
 	for (int i = 0; i < this->CourseNum; i++) {
 		char name[50];             
@@ -186,10 +186,10 @@ void TimeTable::queryCourseByName()
 	char courseName[50];
 	char courseInfo[200];
 
-	cout << "ÇëÊäÈëÄúÒª²éÕÒµÄ¿Î³ÌÃû³Æ" << endl;
+	cout << "è¯·è¾“å…¥æ‚¨è¦æŸ¥æ‰¾çš„è¯¾ç¨‹åç§°" << endl;
 	cin >> courseName;
 	
-	cout << "¿Î³ÌÃû³Æ\tÉÏ¿ÎÊ±¼ä\t\tÉÏ¿ÎµØµã\tÖ½ÖÊ×ÊÁÏ\t\tµ±Ç°½ø¶È\t¿Î³ÌÈº\t\t¿¼ÊÔµØµã \t¿¼ÊÔÊ±¼ä" << endl;
+	cout << "è¯¾ç¨‹åç§°\tä¸Šè¯¾æ—¶é—´\t\tä¸Šè¯¾åœ°ç‚¹\tçº¸è´¨èµ„æ–™\t\tå½“å‰è¿›åº¦\tè¯¾ç¨‹ç¾¤\t\tè€ƒè¯•åœ°ç‚¹ \tè€ƒè¯•æ—¶é—´" << endl;
 
 	for (int i = 0; i < this->CourseNum; i++) 
 	{
@@ -203,7 +203,7 @@ void TimeTable::queryCourseByName()
 
 	if (!flag)
 	{
-		cout << "²éÕÒÊ§°Ü ²éÎŞ´Ë¿Î£¡" << endl;
+		cout << "æŸ¥æ‰¾å¤±è´¥ æŸ¥æ— æ­¤è¯¾ï¼" << endl;
 		return;
 	}
 
@@ -252,4 +252,88 @@ void TimeTable::sortByExamTime() {
 			}
 		}
 	}
+}
+
+char* TimeTable::name_to_place(char name[])
+{	
+	//1.æ ¹æ®è¯¾ç¨‹åç§°åœ¨è¯¾è¡¨ä¸­æŸ¥åˆ°è¯¥è¯¾ç¨‹
+	int flag = 0;
+	int index;
+
+	for (int i = 0; i < this->CourseNum; i++)
+	{
+		if (strcmp(this->myCourse[i].getname(), name) == 0)
+		{
+			flag = 1;
+			index = i;
+			break;			
+		}
+	}
+
+	if (flag == 0) return NULL;
+	
+	//2.æ ¹æ®å½“å‰æ—¶é—´ç¡®å®šæœªæ¥æœ€è¿‘ä¸€æ¬¡ä¸Šè¯¥è¯¾çš„æ—¶é—´ï¼Œå¹¶è¾“å‡ºæç¤ºä¿¡æ¯
+	Time t = myCourse[index].get_course_time();
+	int week = 0;
+	int day = Timer::curDay;
+
+	for (int i = Timer::curWeek; i < 20; i++)
+	{	
+		for (int j = day; j < 8; j++)
+		{
+			if (t.is_on_this_day(i, j))
+			{
+				week = i;
+				day = j;
+				break;
+			}
+		}
+		if (week != 0) break;		
+		day = 1;
+	}
+
+	printf("[æç¤º] å°†åœ¨ç¬¬%då‘¨ç¬¬%då¤©ä¸Šè¿™é—¨è¯¾\n", week, day);
+
+	return myCourse[index].get_place();
+}
+
+char* TimeTable::time_to_place(char time[])
+{
+	//1.å°†å…·ä½“çš„æ—¶é—´ä»å­—ç¬¦ä¸²ä¸­æå–å‡ºæ¥
+	int index;
+	int flag = 0;
+	int week = time[0] - '0';
+	int day = time[2] - '0';
+	int hour = time[4] - '0';
+
+	for (int i = 5; time[i] != '\0'; i++)
+	{
+		hour *= 10;
+		hour += time[i] - '0';
+	}
+
+	//2.æŸ¥æ‰¾æœªæ¥è·ç¦»è¯¥æ—¶é—´æœ€è¿‘çš„ä¸€æ¬¡ä¸Šè¯¾åœ°ç‚¹ä¸è¯¾ç¨‹åç§°
+	this->sortByCourseTime();
+	for (int i = 0; i < this->CourseNum; i++)
+	{
+		Time t = myCourse[i].get_course_time();
+
+		if (t.is_on_this_day(week, day))
+		{
+			if (t.get_startTime() >= hour)
+			{
+				flag = 1;
+				index = i;
+				break;
+			}
+		}
+	}
+
+	if (flag == 0) cout << "[æç¤º] è¿™ä¸€å¤©æ‚¨æ²¡æœ‰è¦ä¸Šçš„è¯¾" << endl;
+
+	//3.æ‰“å°æç¤ºä¿¡æ¯
+	printf("[æç¤º] ç¬¬%då‘¨ç¬¬%då¤©%dç‚¹å°†åœ¨%sä¸Š%s\n", week, day, hour,
+		myCourse[index].get_place(), myCourse[index].getname());
+
+	return myCourse[index].get_place();
 }
