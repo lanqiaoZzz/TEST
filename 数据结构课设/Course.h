@@ -51,6 +51,11 @@ public:
 	Time get_exam_time() {
 		return this->exam_time;
 	}
+	
+	char* get_place()
+	{
+		return this->coursePlace;
+	}
 public:
 	//存储作业
 	void saveHomework();
